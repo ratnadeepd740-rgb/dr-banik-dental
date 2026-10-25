@@ -70,9 +70,14 @@ import {
 // ==========================================
 // 1. FIREBASE INITIALIZATION (STRICT RULES)
 // ==========================================
-const firebaseConfig = typeof __firebase_config !== 'undefined' && __firebase_config
-  ? JSON.parse(__firebase_config)
-  : { apiKey: 'demo-key', projectId: 'demo-project' };
+const firebaseConfig = {
+  apiKey: "AIzaSyCsKIdVbZvoG4EtiDiwZfXxzXUdEulAziY",
+  authDomain: "dr-banik-dental.firebaseapp.com",
+  projectId: "dr-banik-dental",
+  storageBucket: "dr-banik-dental.firebasestorage.app",
+  messagingSenderId: "400210844072",
+  appId: "1:400210844072:web:017fa23389cd157d7ae59d"
+};
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
