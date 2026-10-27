@@ -4654,7 +4654,7 @@ export default function App() {
         {/* ========================================================= */}
         {isBlockModalOpen && (
           <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4">
+            <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-extrabold">
                   Block Chamber on {formatReadableDate(adminSelectedDate)}
