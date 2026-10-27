@@ -220,7 +220,7 @@ const DEFAULT_CHAMBER_SETTINGS = {
   regNo: 'TSDC Reg. Dental Surgeon',
   title: 'Dental Surgeon • Solo Private Practice',
   experience: '25+ Years Clinical Experience',
-  clinicName: "Dr. Debashish Banik's Dental Clinic",
+  clinicName: "Dr. Debasish Banik's Dental Clinic",
   phone: '+91 94361 28490',
   whatsapp: '919436128490',
   consultationFee: '₹300',
