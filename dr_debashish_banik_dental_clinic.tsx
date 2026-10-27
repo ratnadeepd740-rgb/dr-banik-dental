@@ -1764,8 +1764,19 @@ export default function App() {
   // 10. RENDER PRODUCTION UI (LIGHT & DARK)
   // ==========================================
   return (
-    <div className={darkMode ? 'dark' : ''}>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-teal-600 selection:text-white transition-colors duration-200">
+    <div>
+      <div className="min-h-screen bg-[#FAF7F0] text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200">
+        <style>{`
+          @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+          .font-editorial {
+            font-family: 'Newsreader', Georgia, serif;
+          }
+          .bg-dot-cream {
+            background-color: #FAF7F0;
+            background-image: radial-gradient(#E5DEC9 1.25px, transparent 1.25px);
+            background-size: 18px 18px;
+          }
+        `}</style>
         {/* FLOATING TOAST NOTIFICATION */}
         {toast && (
           <div className="fixed bottom-5 right-5 z-50 max-w-md bg-slate-900 dark:bg-slate-800 text-white px-5 py-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3">
@@ -1872,16 +1883,6 @@ export default function App() {
               >
                 <Globe className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
                 <span>{lang === 'en' ? 'বাংলা' : 'EN'}</span>
-              </button>
-
-              {/* Light / Dark Mode Toggle */}
-              <button
-                onClick={() => setDarkMode((prev) => !prev)}
-                className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-300 hover:border-teal-500 transition-colors"
-                title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-                aria-label="Toggle Light or Dark Mode"
-              >
-                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
               </button>
 
               {/* Prominent Booking QR Button */}
