@@ -357,9 +357,9 @@ const generateChamberSlots = (durationMins = 20) => {
     return `${String(hours12).padStart(2, '0')}:${String(mins).padStart(2, '0')} ${period}`;
   };
 
-  // Morning Regular Chamber: 10:00 AM (600) to 11:45 AM (705)
+  // Morning Regular Chamber: 09:30 AM (600) to 12:00AM (705)
   const morning = [];
-  for (let t = 10 * 60; t <= 11 * 60 + 45; t += interval) {
+  for (let t = 9 * 60 + 30; t <= 12 * 60; t += interval) {
     morning.push(formatTime(t));
   }
 
@@ -369,9 +369,9 @@ const generateChamberSlots = (durationMins = 20) => {
     '02:00 PM – 04:00 PM (Special Slot 2)'
   ];
 
-  // Evening Regular Chamber: 05:00 PM (1020) to 08:15 PM (1215)
+  // Evening Regular Chamber: 04:30 PM (1020) to 08:00 PM (1215)
   const evening = [];
-  for (let t = 17 * 60; t <= 20 * 60 + 15; t += interval) {
+  for (let t = 16 * 60 + 30; t <= 20 * 60; t += interval) {
     evening.push(formatTime(t));
   }
 
