@@ -1764,8 +1764,13 @@ export default function App() {
   // 10. RENDER PRODUCTION UI (LIGHT & DARK)
   // ==========================================
   return (
-    <div>
-      <div className="min-h-screen bg-dot-cream text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200">
+   <div
+        className={`min-h-screen ${
+          viewMode === 'admin'
+            ? 'bg-dot-dark text-slate-100'
+            : 'bg-dot-cream text-[#183A32]'
+        } font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200`}
+      >
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
           .font-editorial {
@@ -1775,6 +1780,23 @@ export default function App() {
             background-color: #FAF7F0;
             background-image: radial-gradient(#E5DEC9 1.25px, transparent 1.25px);
             background-size: 18px 18px;
+          }
+          .bg-dot-dark {
+            background-color: #060D1A;
+            background-image:
+              radial-gradient(at 15% 10%, rgba(20, 184, 166, 0.10) 0px, transparent 45%),
+              radial-gradient(at 85% 90%, rgba(15, 118, 110, 0.10) 0px, transparent 45%),
+              radial-gradient(#1E293B 1.25px, transparent 1.25px);
+            background-size: 100% 100%, 100% 100%, 20px 20px;
+          }
+          .bg-dot-dark input,
+          .bg-dot-dark select,
+          .bg-dot-dark textarea {
+            color: #F8FAFC;
+          }
+          .bg-dot-dark select option {
+            background-color: #0F172A;
+            color: #F8FAFC;
           }
         `}</style>
         {/* FLOATING TOAST NOTIFICATION */}
