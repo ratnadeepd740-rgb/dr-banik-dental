@@ -2169,7 +2169,7 @@ export default function App() {
                     </h3>
                     <p className="text-slate-200 text-sm leading-relaxed">
                       Trained at Northeast India’s premier government dental institution—
-                      <strong>Regional Dental College (RDC), Guwahati</strong>—with over 15 years of clinical expertise in painless tooth extractions, root canals, orthodontic braces, and prosthetic dentures.
+                      <strong>Regional Dental College (RDC), Guwahati</strong>—with over 25 years of clinical expertise in painless tooth extractions, root canals, orthodontic braces, and prosthetic dentures.
                     </p>
                     <div className="space-y-2.5 pt-2 border-t border-white/15 text-xs sm:text-sm">
                       <div className="flex items-center gap-2">
@@ -3501,11 +3501,11 @@ export default function App() {
                         <input
                           type="text"
                           required
-                          value={settingsForm.eveningHoursLabel || ''}
+                          value={settingsForm.daysOpenLabel || ''}
                           onChange={(e) =>
                             setSettingsForm({
                               ...settingsForm,
-                              eveningHoursLabel: e.target.value
+                              daysOpenLabel: e.target.value
                             })
                           }
                           className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-semibold"
