@@ -1764,11 +1764,8 @@ export default function App() {
   // 10. RENDER PRODUCTION UI (LIGHT & DARK)
   // ==========================================
   return (
-   <div
-        className={`min-h-screen ${
-          viewMode === 'admin' ? 'bg-slate-950 text-slate-100' : 'bg-dot-cream text-[#183A32]'
-        } font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200`}
-      >
+    <div>
+      <div className="min-h-screen bg-dot-cream text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200">
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
           .font-editorial {
