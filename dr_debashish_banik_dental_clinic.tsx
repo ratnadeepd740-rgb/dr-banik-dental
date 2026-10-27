@@ -4733,7 +4733,7 @@ export default function App() {
           <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
             <form
               onSubmit={handleAddWalkIn}
-              className="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4"
+              className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -4872,7 +4872,7 @@ export default function App() {
           <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
             <form
               onSubmit={handleVerifyPin}
-              className="bg-white dark:bg-slate-900 rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4"
+              className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
@@ -4910,7 +4910,7 @@ export default function App() {
                   value={pinInput}
                   onChange={(e) => setPinInput(e.target.value)}
                   placeholder="••••"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-center text-xl font-extrabold tracking-widest focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 dark:text-white text-center text-xl font-extrabold tracking-widest focus:outline-none focus:ring-2 focus:ring-teal-500"
                 />
               </div>
 
