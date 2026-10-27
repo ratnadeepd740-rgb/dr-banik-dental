@@ -3576,7 +3576,7 @@ export default function App() {
 
               {/* RIGHT 4 COLUMNS: SLOT INTERVAL, SPECIAL CASE CAP & SESSION BLOCKING */}
               <div className="lg:col-span-4 space-y-6">
-                <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-5">
+                <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-5">
                   <div className="flex items-center gap-2.5">
                     <div className="w-9 h-9 rounded-xl bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-400 flex items-center justify-center font-bold">
                       <Clock className="w-5 h-5" />
