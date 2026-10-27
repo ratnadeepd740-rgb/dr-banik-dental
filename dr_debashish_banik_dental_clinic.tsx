@@ -215,12 +215,12 @@ const DEFAULT_SERVICES = [
 ];
 
 const DEFAULT_CHAMBER_SETTINGS = {
-  doctorName: 'Dr. Debashish Banik',
+  doctorName: 'Dr. Debasish Banik',
   degree: 'BDS (Regional Dental College, Guwahati)',
   regNo: 'TSDC Reg. Dental Surgeon',
   title: 'Dental Surgeon • Solo Private Practice',
-  experience: '15+ Years Clinical Experience',
-  clinicName: "Dr. Debashish Banik's Dental Chamber",
+  experience: '25+ Years Clinical Experience',
+  clinicName: "Dr. Debashish Banik's Dental Clinic",
   phone: '+91 94361 28490',
   whatsapp: '919436128490',
   consultationFee: '₹300',
@@ -233,7 +233,7 @@ const DEFAULT_CHAMBER_SETTINGS = {
   morningHoursLabel: '10:00 AM – 12:00 PM',
   specialHoursLabel: '12:00 PM – 04:00 PM (Special Cases Only)',
   eveningHoursLabel: '05:00 PM – 08:30 PM',
-  daysOpenLabel: 'Mon – Sat (Sunday: By Prior Appointment)',
+  daysOpenLabel: 'Mon – Sat (Sunday: morning only)',
   slotDuration: 20, // 15, 20, or 30 mins for regular chamber
   maxSpecialCasesPerDay: 2, // Strict cap of 2 special cases per day
   autoReminder24h: true,
@@ -265,10 +265,10 @@ const TRANSLATIONS = {
     aboutNav: 'About Doctor',
     servicesNav: 'Treatments & Special Cases',
     locationNav: 'Chamber Address & Map',
-    heroBadge: 'BDS, Regional Dental College (RDC), Guwahati • 15+ Yrs Experience',
+    heroBadge: 'BDS, Regional Dental College (RDC), Guwahati • 25+ Yrs Experience',
     heroTitlePrefix: 'Personal, Painless & Trusted Dental Care by',
     heroSubtitle:
-      'Welcome to a dedicated solo dental chamber on A.A Road, Agartala. Every patient is examined and treated 1-on-1 by Dr. Debashish Banik himself.',
+      'Welcome to a dedicated solo dental chamber on A.A Road, Agartala. Every patient is examined and treated 1-on-1 by Dr. Debasish Banik himself.',
     liveQueueTitle: 'Live Today’s Chamber Token Status',
     insideNow: 'Inside Chamber Now',
     nextToken: 'Next Token in Queue',
@@ -291,7 +291,7 @@ const TRANSLATIONS = {
     aboutNav: 'ডাক্তার সম্পর্কে',
     servicesNav: 'চিকিৎসা ও স্পেশাল কেস',
     locationNav: 'চেম্বারের ঠিকানা ও ম্যাপ',
-    heroBadge: 'বি.ডি.এস (আঞ্চলিক ডেন্টাল কলেজ, গুয়াহাটি) • ১৫+ বছরের অভিজ্ঞতা',
+    heroBadge: 'বি.ডি.এস (আঞ্চলিক ডেন্টাল কলেজ, গুয়াহাটি) • ২৫+ বছরের অভিজ্ঞতা',
     heroTitlePrefix: 'যত্ন সহকারে ও ব্যথাহীন দাঁতের চিকিৎসা —',
     heroSubtitle:
       'আগরতলার এ.এ রোডে (মঠচৌমুহনী বাজার সংলগ্ন) ডাঃ দেবাশীষ বণিকের নিজস্ব ডেন্টাল চেম্বার। প্রতিটি রোগীকে ডাক্তারবাবু নিজে যত্ন সহকারে পরীক্ষা ও চিকিৎসা করেন।',
@@ -622,6 +622,9 @@ export default function App() {
           const merged = {
             ...DEFAULT_CHAMBER_SETTINGS,
             ...data,
+            doctorName: 'Dr. Debasish Banik',
+            experience: '25+ Years Clinical Experience',
+            clinicName: "Dr. Debasish Banik's Dental Clinic",
             services:
               Array.isArray(data.services) && data.services.length > 0
                 ? data.services
