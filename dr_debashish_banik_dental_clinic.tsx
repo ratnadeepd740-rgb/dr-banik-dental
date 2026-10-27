@@ -1944,7 +1944,7 @@ export default function App() {
         {/* ========================================================= */}
         {viewMode === 'patient' ? (
           <main>
-            <section className="relative overflow-hidden bg-dot-cream pt-12 pb-16 sm:py-20 border-b border-[#E6E0D3]">
+            <section className="relative overflow-hidden bg-white pt-12 pb-16 sm:py-20 border-b border-[#E6E0D3]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                   {/* Left Column (Matches Attached Reference Image) */}
