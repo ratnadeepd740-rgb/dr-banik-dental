@@ -1765,7 +1765,7 @@ export default function App() {
   // ==========================================
   return (
     <div>
-      <div className="min-h-screen bg-[#FAF7F0] text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200">
+      <div className="min-h-screen bg-dot-cream text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200">
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
           .font-editorial {
@@ -2144,7 +2144,7 @@ export default function App() {
             {/* DOCTOR BIO & OUTSIDE X-RAY TRANSPARENCY BANNER */}
             <section
               id="about-doctor"
-              className="py-14 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
+              className="py-14 bg-dot-cream border-b border-[#E6E0D3]"
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
                 {/* Outside X-Ray Policy Notice */}
@@ -2220,7 +2220,7 @@ export default function App() {
             {/* TREATMENTS SECTION: REGULAR VS SPECIAL CASES */}
             <section
               id="services"
-              className="py-16 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800"
+              className="py-16 bg-dot-cream border-b border-[#E6E0D3]"
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-14">
                 {/* PART A: REGULAR CHAMBER SERVICES */}
@@ -2349,7 +2349,7 @@ export default function App() {
             </section>
 
             {/* PATIENT SELF-SERVICE TOKEN LOOKUP & RESCHEDULE SECTION (NO SAMPLE CHIPS) */}
-            <section className="py-14 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+            <section className="py-14 bg-dot-cream border-b border-[#E6E0D3]">
               <div className="max-w-5xl mx-auto px-4 sm:px-6">
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-6 sm:p-10 text-white shadow-xl">
                   <div className="max-w-2xl">
@@ -2476,7 +2476,7 @@ export default function App() {
             </section>
 
             {/* CHAMBER LOCATION, HOURS & GOOGLE MAP (A.A ROAD, MATHCHOWMAHANI) */}
-            <section id="clinic-location" className="py-16 bg-slate-50 dark:bg-slate-950">
+            <section id="clinic-location" className="py-16 bg-dot-cream">
               <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                   <div className="lg:col-span-5 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6">
