@@ -1765,14 +1765,14 @@ export default function App() {
   // ==========================================
   return (
     <div>
-      <div className="min-h-screen bg-dot-cream text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200">
+      <div className="min-h-screen bg-[#d19618] text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200">
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
           .font-editorial {
             font-family: 'Newsreader', Georgia, serif;
           }
           .bg-dot-cream {
-            background-color: #FAF7F0;
+            background-color: #d19618;
             background-image: radial-gradient(#E5DEC9 1.25px, transparent 1.25px);
             background-size: 18px 18px;
           }
