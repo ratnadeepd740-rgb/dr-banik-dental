@@ -2144,7 +2144,7 @@ export default function App() {
             {/* DOCTOR BIO & OUTSIDE X-RAY TRANSPARENCY BANNER */}
             <section
               id="about-doctor"
-              className="py-14 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
+              className="py-14 bg-dot-cream dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
                 {/* Outside X-Ray Policy Notice */}
