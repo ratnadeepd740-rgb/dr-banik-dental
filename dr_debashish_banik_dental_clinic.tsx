@@ -1944,99 +1944,65 @@ export default function App() {
         {/* ========================================================= */}
         {viewMode === 'patient' ? (
           <main>
-            {/* HERO SECTION */}
-            <section className="relative overflow-hidden bg-gradient-to-b from-teal-50/70 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 pt-8 pb-16 sm:py-16 border-b border-slate-200/80 dark:border-slate-800">
+            <section className="relative overflow-hidden bg-dot-cream pt-12 pb-16 sm:py-20 border-b border-[#E6E0D3]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                  {/* Left Column */}
-                  <div className="lg:col-span-7 space-y-6">
-                    <div className="inline-flex items-center gap-2 bg-teal-100/90 dark:bg-teal-950/90 text-teal-900 dark:text-teal-300 border border-teal-300 dark:border-teal-800 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold">
-                      <Award className="w-4 h-4 text-teal-700 dark:text-teal-400 shrink-0" />
-                      <span>{t.heroBadge}</span>
+                  {/* Left Column (Matches Attached Reference Image) */}
+                  <div className="lg:col-span-7">
+                    {/* Eyebrow */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="w-8 h-[1.5px] bg-[#9E7B4F]"></span>
+                      <span className="text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#9E7B4F]">
+                        Personal care, right here in Agartala
+                      </span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15]">
-                      {t.heroTitlePrefix}{' '}
-                      <span className="text-teal-700 dark:text-teal-400 underline decoration-teal-400/60 decoration-wavy underline-offset-8">
-                        {clinicSettings.doctorName}
-                      </span>
+                    {/* Editorial Serif Heading */}
+                    <h2 className="font-editorial text-5xl sm:text-6xl md:text-7xl leading-[1.06] tracking-tight text-[#183A32] mb-6 font-normal">
+                      A gentler way <br />
+                      to <span className="italic font-normal text-[#A67C46]">smile again.</span>
                     </h2>
 
-                    <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl">
-                      {t.heroSubtitle}
+                    {/* Subheading */}
+                    <p className="text-lg sm:text-xl text-[#4A635D] max-w-xl leading-relaxed mb-9 font-normal">
+                      Thoughtful, one-to-one dental care with {clinicSettings.doctorName} — for you, your children and the whole family.
                     </p>
 
-                    {/* Location Pill */}
-                    <div className="inline-flex items-start gap-2.5 bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                      <MapPin className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
-                      <div>
-                        <span className="font-extrabold text-slate-900 dark:text-white">
-                          Chamber Location:{' '}
-                        </span>
-                        <span>{clinicSettings.address}</span>
-                      </div>
-                    </div>
-
-                    {/* Primary CTAs */}
-                    <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 pt-1">
+                    {/* Primary Pill Buttons */}
+                    <div className="flex flex-wrap items-center gap-4 mb-12">
                       <button
                         onClick={() => openBookingWithService('general-consultation')}
-                        className="bg-teal-600 hover:bg-teal-700 text-white font-extrabold text-base sm:text-lg px-7 py-4 rounded-2xl shadow-lg shadow-teal-600/25 hover:shadow-xl transition-all flex items-center justify-center gap-3 group"
+                        className="inline-flex items-center gap-3 bg-[#1A4339] hover:bg-[#123028] text-white font-semibold text-base px-7 py-4 rounded-full shadow-sm transition-all group"
                       >
-                        <Calendar className="w-5 h-5" />
-                        <span>{t.bookBtn}</span>
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </button>
-
-                      <button
-                        onClick={() => setIsLookupModalOpen(true)}
-                        className="bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-300 dark:border-slate-700 font-bold text-base sm:text-lg px-5 py-4 rounded-2xl transition-all flex items-center justify-center gap-2"
-                      >
-                        <Search className="w-5 h-5 text-teal-600 dark:text-teal-400" />
-                        <span>{t.checkTokenBtn}</span>
+                        <span>Book an appointment</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </button>
 
                       <button
                         onClick={() => setIsQrModalOpen(true)}
-                        className="bg-teal-50 dark:bg-teal-950/80 hover:bg-teal-100 dark:hover:bg-teal-900 text-teal-900 dark:text-teal-200 border-2 border-teal-300 dark:border-teal-700 font-extrabold text-base px-5 py-4 rounded-2xl transition-all flex items-center justify-center gap-2"
+                        className="inline-flex items-center gap-2.5 bg-[#FAF7F0]/90 hover:bg-[#EFE9DC] text-[#183A32] border border-[#D5CFC2] font-semibold text-base px-7 py-4 rounded-full transition-all"
                       >
-                        <QrCode className="w-5 h-5 text-teal-700 dark:text-teal-400" />
-                        <span>{t.showQrHeroBtn}</span>
+                        <QrCode className="w-4 h-4 text-[#183A32]" />
+                        <span>Scan to book</span>
                       </button>
                     </div>
 
-                    {/* Trust Highlights */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                      <div className="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <p className="text-xl font-extrabold text-teal-700 dark:text-teal-400">
-                          #001+
-                        </p>
-                        <p className="text-xs font-semibold text-slate-600 dark:text-slate-400">
-                          Daily Serial Token
-                        </p>
+                    {/* 25+ Years Experience Strip */}
+                    <div className="pt-7 border-t border-[#E6E0D3] flex items-center gap-4">
+                      <div className="flex items-center -space-x-2">
+                        <div className="w-11 h-11 rounded-full bg-[#DCE6E0] text-[#183A32] font-bold text-xs flex items-center justify-center border-2 border-[#FAF7F0]">
+                          25+
+                        </div>
+                        <div className="w-11 h-11 rounded-full bg-[#E8D8C3] text-[#183A32] flex items-center justify-center border-2 border-[#FAF7F0]">
+                          <HeartHandshake className="w-5 h-5" />
+                        </div>
                       </div>
-                      <div className="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <p className="text-xl font-extrabold text-teal-700 dark:text-teal-400">
-                          RDC
+                      <div>
+                        <p className="font-bold text-[#183A32] text-sm sm:text-base">
+                          A familiar face. A steady hand.
                         </p>
-                        <p className="text-xs font-semibold text-slate-600 dark:text-slate-400">
-                          Guwahati Govt. Alumni
-                        </p>
-                      </div>
-                      <div className="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <p className="text-xl font-extrabold text-teal-700 dark:text-teal-400">
-                          15+ Yrs
-                        </p>
-                        <p className="text-xs font-semibold text-slate-600 dark:text-slate-400">
-                          Clinical Experience
-                        </p>
-                      </div>
-                      <div className="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <p className="text-xl font-extrabold text-teal-700 dark:text-teal-400">
-                          {clinicSettings.consultationFee}
-                        </p>
-                        <p className="text-xs font-semibold text-slate-600 dark:text-slate-400">
-                          General Checkup
+                        <p className="text-xs sm:text-sm text-[#5A6D67]">
+                          More than 25 years caring for smiles.
                         </p>
                       </div>
                     </div>
