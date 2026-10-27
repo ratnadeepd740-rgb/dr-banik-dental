@@ -1765,7 +1765,7 @@ export default function App() {
   // ==========================================
   return (
     <div>
-      <div className="min-h-screen dark:bg-black  text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-200">
+     <div className="min-h-screen bg-[#FAF7F0] dark:bg-slate-950 text-[#183A32] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#1A4339] selection:text-white transition-colors duration-300">
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
           .font-editorial {
@@ -1776,6 +1776,37 @@ export default function App() {
             background-image: radial-gradient(#E5DEC9 1.25px, transparent 1.25px);
             background-size: 18px 18px;
           }
+          html { scroll-behavior: smooth; }
+
+.glass {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+}
+@media (prefers-color-scheme: dark) {
+  .glass { background: rgba(15,23,42,0.72); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up .6s cubic-bezier(.2,.7,.2,1) both; }
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-pop { animation: pop-in .22s ease-out both; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #94a3b8aa; border-radius: 999px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; background-clip: content-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up, .animate-pop { animation: none; }
+  html { scroll-behavior: auto; }
+}
         `}</style>
         {/* FLOATING TOAST NOTIFICATION */}
         {toast && (
@@ -1826,7 +1857,7 @@ export default function App() {
         </div>
 
         {/* MAIN STICKY HEADER WITH LIGHT/DARK & BENGALI/ENGLISH TOGGLES */}
-        <header className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
+        <header className="sticky top-0 z-40 glass border-b border-slate-200/60 dark:border-slate-800/60 shadow-[0_1px_20px_-8px_rgba(0,0,0,0.15)] transition-colors">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
             {/* Brand Identity */}
             <div
@@ -1944,11 +1975,13 @@ export default function App() {
         {/* ========================================================= */}
         {viewMode === 'patient' ? (
           <main>
-            <section className="relative overflow-hidden bg-dot-cream pt-12 pb-16 sm:py-20 border-b border-[#E6E0D3]">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <section className="relative overflow-hidden bg-dot-cream dark:bg-slate-950 pt-12 pb-16 sm:py-20 border-b border-[#E6E0D3] dark:border-slate-800">
+  <div className="pointer-events-none absolute -top-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-teal-400/20 blur-3xl" />
+  <div className="pointer-events-none absolute -bottom-32 -left-20 w-[26rem] h-[26rem] rounded-full bg-amber-300/20 blur-3xl" />
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                   {/* Left Column (Matches Attached Reference Image) */}
-                  <div className="lg:col-span-7">
+                  <div className="lg:col-span-7 animate-fade-up">
                     {/* Eyebrow */}
                     <div className="flex items-center gap-3 mb-6">
                       <span className="w-8 h-[1.5px] bg-[#9E7B4F]"></span>
@@ -1972,7 +2005,7 @@ export default function App() {
                     <div className="flex flex-wrap items-center gap-4 mb-12">
                       <button
                         onClick={() => openBookingWithService('general-consultation')}
-                        className="inline-flex items-center gap-3 bg-[#1A4339] hover:bg-[#123028] text-white font-semibold text-base px-7 py-4 rounded-full shadow-sm transition-all group"
+                        className="inline-flex items-center gap-3 bg-gradient-to-r from-[#1A4339] to-[#23594b] hover:brightness-110 text-white font-semibold text-base px-7 py-4 rounded-full shadow-lg shadow-teal-900/20 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all group"
                       >
                         <span>Book an appointment</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -2241,11 +2274,11 @@ export default function App() {
                     {activeRegularServices.map((service) => (
                       <div
                         key={service.id}
-                        className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-md hover:border-teal-500 transition-all flex flex-col justify-between"
+                        className="group bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:shadow-teal-900/10 hover:-translate-y-1 hover:border-teal-400/70 transition-all duration-300 flex flex-col justify-between"
                       >
                         <div>
                           <div className="flex items-center justify-between gap-2 mb-4">
-                            <div className="w-11 h-11 rounded-xl bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-400 border border-teal-200 dark:border-teal-800 flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-md shadow-teal-600/30 flex items-center justify-center group-hover:scale-105 transition-transform">
                               <Stethoscope className="w-5 h-5" />
                             </div>
                             <span className="text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full">
@@ -2272,7 +2305,7 @@ export default function App() {
                           </div>
                           <button
                             onClick={() => openBookingWithService(service.id)}
-                            className="w-full bg-teal-600 hover:bg-teal-700 text-white font-extrabold py-3 px-4 rounded-xl transition-all flex items-center justify-center gap-2 text-sm"
+                            className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:brightness-110 text-white font-extrabold py-3 px-4 rounded-2xl shadow-md shadow-teal-600/20 transition-all flex items-center justify-center gap-2 text-sm"
                           >
                             <span>Book Morning / Evening Slot</span>
                             <ArrowRight className="w-4 h-4" />
@@ -2307,7 +2340,7 @@ export default function App() {
                     {activeSpecialServices.map((service) => (
                       <div
                         key={service.id}
-                        className="bg-white dark:bg-slate-900 rounded-2xl border-2 border-purple-200 dark:border-purple-800/80 p-5 shadow-sm flex flex-col justify-between"
+                        className="group bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl border-2 border-purple-200 dark:border-purple-800/80 p-5 shadow-sm hover:shadow-xl hover:shadow-purple-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
                       >
                         <div>
                           <div className="flex items-center justify-between gap-2 mb-3">
@@ -2335,7 +2368,7 @@ export default function App() {
                           </div>
                           <button
                             onClick={() => openBookingWithService(service.id)}
-                            className="w-full bg-purple-700 hover:bg-purple-800 text-white font-extrabold py-2.5 px-3 rounded-xl transition-all flex items-center justify-center gap-1.5 text-xs sm:text-sm"
+                            className="w-full bg-gradient-to-r from-purple-700 to-violet-600 hover:brightness-110 text-white font-extrabold py-2.5 px-3 rounded-2xl shadow-md shadow-purple-700/20 transition-all flex items-center justify-center gap-1.5 text-xs sm:text-sm"
                           >
                             <span>Book 12 PM – 4 PM Slot</span>
                             <ArrowRight className="w-4 h-4" />
@@ -2618,7 +2651,7 @@ export default function App() {
           /* ========================================================= */
           <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
             {/* DOCTOR CONSOLE HEADER */}
-            <div className="bg-slate-900 text-white rounded-3xl p-6 shadow-lg flex flex-col lg:flex-row lg:items-center justify-between gap-4 border border-slate-800">
+            <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-teal-950 text-white rounded-3xl p-6 shadow-xl shadow-slate-900/20 flex flex-col lg:flex-row lg:items-center justify-between gap-4 border border-slate-800/80">
               <div>
                 <div className="flex items-center gap-2.5">
                   <span className="bg-teal-500/20 text-teal-300 border border-teal-400/40 text-xs font-bold px-3 py-1 rounded-full">
@@ -3670,8 +3703,8 @@ export default function App() {
         {/* MODAL 1: 3-STEP BOOKING MODAL (REGULAR & SPECIAL CASES)   */}
         {/* ========================================================= */}
         {isBookingOpen && (
-          <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-auto">
+          <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+            <div className="bg-white dark:bg-slate-900 animate-pop rounded-3xl  max-w-2xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-auto">
               {/* Modal Header */}
               <div className="bg-slate-900 text-white px-6 py-5 flex items-center justify-between">
                 <div>
@@ -4301,8 +4334,8 @@ export default function App() {
         {/* MODAL 2: PATIENT LOOKUP & RESCHEDULE MODAL                */}
         {/* ========================================================= */}
         {isLookupModalOpen && (
-          <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-auto">
+          <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+            <div className="bg-white dark:bg-slate-900 animate-pop rounded-3xl  max-w-xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-auto">
               <div className="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-extrabold">
@@ -4495,10 +4528,10 @@ export default function App() {
         {/* MODAL 3: DOCTOR SERVICE & PRICE EDITOR MODAL              */}
         {/* ========================================================= */}
         {isServiceModalOpen && editingService && (
-          <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+          <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
             <form
               onSubmit={handleSaveServiceItem}
-              className="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4 my-auto"
+              className="bg-white dark:bg-slate-900 animate-pop rounded-3xl  max-w-lg w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4 my-auto"
             >
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-extrabold">
@@ -4653,8 +4686,8 @@ export default function App() {
         {/* MODAL 4: BLOCK DAY / SESSION MODAL                        */}
         {/* ========================================================= */}
         {isBlockModalOpen && (
-          <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4">
+          <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md flex items-center justify-center p-4">
+            <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 animate-pop rounded-3xl  max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-extrabold">
                   Block Chamber on {formatReadableDate(adminSelectedDate)}
@@ -4730,10 +4763,10 @@ export default function App() {
         {/* MODAL 5: ADD WALK-IN PATIENT MODAL                        */}
         {/* ========================================================= */}
         {isWalkInModalOpen && (
-          <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md flex items-center justify-center p-4">
             <form
               onSubmit={handleAddWalkIn}
-              className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4"
+              className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 animate-pop rounded-3xl  fmax-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -4869,10 +4902,10 @@ export default function App() {
         {/* MODAL 6: CLEAN DOCTOR PIN LOGIN MODAL (NO PUBLIC HINTS)   */}
         {/* ========================================================= */}
         {isPinModalOpen && (
-          <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md flex items-center justify-center p-4">
             <form
               onSubmit={handleVerifyPin}
-              className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4"
+              className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 animate-pop rounded-3xl  max-w-sm w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
@@ -4929,7 +4962,7 @@ export default function App() {
         {/* ========================================================= */}
         {isQrModalOpen && (
           <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-auto">
+            <div className="bg-white dark:bg-slate-900 animate-pop rounded-3xl  max-w-2xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-auto">
               {/* Modal Top Bar (Hidden when printing) */}
               <div className="bg-slate-900 text-white px-6 py-4 flex items-center justify-between print:hidden">
                 <div className="flex items-center gap-2.5">
