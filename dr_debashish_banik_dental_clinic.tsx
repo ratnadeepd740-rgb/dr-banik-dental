@@ -2863,7 +2863,7 @@ export default function App() {
                                 ? 'bg-slate-900 dark:bg-teal-600 text-white border-slate-900 dark:border-teal-500 shadow-sm'
                                 : d.blockInfo
                                 ? 'bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300 border-rose-200 dark:border-rose-800'
-                                : 'bg-white dark:bg-slate-800 hover:bg-slate-50 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700'
+                                : 'bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700'
                             }`}
                           >
                             <div className="flex items-center justify-between text-xs font-semibold opacity-80">
@@ -3053,7 +3053,7 @@ export default function App() {
                                         className={`px-2.5 py-1.5 rounded-lg text-xs font-bold border transition-all ${
                                           appt.status === st
                                             ? 'bg-slate-900 dark:bg-teal-500 text-white dark:text-slate-950 border-slate-900 dark:border-teal-500 shadow-sm'
-                                            : 'bg-white dark:bg-slate-900 hover:bg-slate-100 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700'
+                                            : 'bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700'
                                         }`}
                                       >
                                         {st}
@@ -4194,7 +4194,7 @@ export default function App() {
                             key={chip}
                             type="button"
                             onClick={() => setPatientForm({ ...patientForm, symptoms: chip })}
-                            className="text-xs bg-slate-100 dark:bg-slate-800 hover:bg-teal-50 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 px-2.5 py-1 rounded-lg transition-colors"
+                            className="text-xs bg-slate-100 dark:bg-slate-800 hover:bg-teal-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 px-2.5 py-1 rounded-lg transition-colors"
                           >
                             + {chip}
                           </button>
