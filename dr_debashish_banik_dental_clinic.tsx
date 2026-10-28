@@ -4539,7 +4539,7 @@ export default function App() {
           <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
             <form
               onSubmit={handleSaveServiceItem}
-              className="bg-white dark:bg-slate-900 animate-pop rounded-3xl  max-w-lg w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4 my-auto"
+                    className="animate-pop bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-[28px] max-w-lg w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4 my-auto"
             >
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-extrabold">
