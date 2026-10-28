@@ -410,7 +410,16 @@ const timeToMinutes = (timeStr) => {
 // Normalize block entry for a date
 const getBlockInfoForDate = (blockedDatesMap, dateStr) => {
   const raw = blockedDatesMap?.[dateStr];
-  if (!raw) return null;
+  if (!raw) {
+    // Permanent rule: chamber is closed every Sunday evening
+    if (dateStr) {
+      const [y, m, d] = dateStr.split('-').map(Number);
+      if (new Date(y, m - 1, d).getDay() === 0) {
+        return { scope: 'evening', reason: 'Chamber closed every Sunday evening' };
+      }
+    }
+    return null;
+  }
   if (typeof raw === 'string') {
     return { scope: 'full', reason: raw };
   }
