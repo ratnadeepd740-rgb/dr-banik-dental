@@ -13,6 +13,7 @@ import {
   setDoc,
   updateDoc,
   deleteDoc,
+  deletefield,
   onSnapshot
 } from 'firebase/firestore';
 import {
@@ -1434,12 +1435,19 @@ export default function App() {
         SETTINGS_COLLECTION,
         'config'
       );
-      if (user) {
-        await setDoc(
-          settingsRef,
-          { ...clinicSettings, blockedDates: currentBlocks },
-          { merge: true }
-        );
+            if (user) {
+        if (!scope || scope === 'unblock') {
+          // merge:true never removes keys from a map, so delete the field explicitly
+          await updateDoc(settingsRef, {
+            [`blockedDates.${dateStr}`]: deleteField()
+          });
+        } else {
+          await setDoc(
+            settingsRef,
+            { ...clinicSettings, blockedDates: currentBlocks },
+            { merge: true }
+          );
+        }
       } else {
         setClinicSettings((prev) => ({ ...prev, blockedDates: currentBlocks }));
       }
