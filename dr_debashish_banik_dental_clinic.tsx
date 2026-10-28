@@ -1435,19 +1435,9 @@ export default function App() {
         SETTINGS_COLLECTION,
         'config'
       );
-            if (user) {
-        if (!scope || scope === 'unblock') {
-          // merge:true never removes keys from a map, so delete the field explicitly
-          await updateDoc(settingsRef, {
-            [`blockedDates.${dateStr}`]: deleteField()
-          });
-        } else {
-          await setDoc(
-            settingsRef,
-            { ...clinicSettings, blockedDates: currentBlocks },
-            { merge: true }
-          );
-        }
+                  if (user) {
+        // updateDoc replaces the whole blockedDates map (setDoc+merge cannot delete keys)
+        await updateDoc(settingsRef, { blockedDates: currentBlocks });
       } else {
         setClinicSettings((prev) => ({ ...prev, blockedDates: currentBlocks }));
       }
@@ -1467,7 +1457,8 @@ export default function App() {
         showToast(`${formatReadableDate(dateStr)} (${label}) marked unavailable.`);
       }
     } catch (err) {
-      console.error('Block date error:', err);
+            console.error('Block date error:', err);
+      showToast(`Could not update blocked dates: ${err?.message || 'unknown error'}`, 'error');
     }
   };
 
