@@ -1792,7 +1792,7 @@ export default function App() {
   -webkit-backdrop-filter: blur(14px) saturate(160%);
 }
 @media (prefers-color-scheme: dark) {
-  .glass { background: rgba(15,23,42,0.72); }
+  .glass { background: rgba(15,23,42,0.94); }
 }
 
 @keyframes fade-up {
@@ -2189,7 +2189,7 @@ export default function App() {
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
                 {/* Outside X-Ray Policy Notice */}
-                <div className="bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/80 rounded-2xl p-5 flex items-start gap-3.5">
+                <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800/80 rounded-2xl p-5 flex items-start gap-3.5">
                   <Info className="w-6 h-6 text-amber-700 dark:text-amber-400 shrink-0 mt-0.5" />
                   <div className="text-xs sm:text-sm text-amber-950 dark:text-amber-200 space-y-1">
                     <p className="font-extrabold text-amber-900 dark:text-amber-300 text-sm sm:text-base">
@@ -2229,14 +2229,14 @@ export default function App() {
                   </div>
 
                   <div className="lg:col-span-7 space-y-4">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                       Structured Chamber Timings for Zero Crowd & Better Care
                     </h3>
                     <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                       To ensure every patient receives unhurried attention, our chamber separates quick daily checkups/extractions from time-intensive procedures:
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                      <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
+                      <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                         <h4 className="font-extrabold text-teal-700 dark:text-teal-400 text-base">
                           Regular Chamber (Morning & Evening)
                         </h4>
@@ -2244,7 +2244,7 @@ export default function App() {
                           For General Checkups, Toothache Relief, Outside X-Ray Reviews, Tooth Extractions, Dentures, and Kids Dental Care.
                         </p>
                       </div>
-                      <div className="p-5 rounded-2xl bg-purple-50/70 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800">
+                      <div className="p-5 rounded-2xl bg-purple-50/70 dark:bg-purple-950 border border-purple-200 dark:border-purple-800">
                         <h4 className="font-extrabold text-purple-800 dark:text-purple-300 text-base">
                           Special Cases (12:00 PM – 04:00 PM)
                         </h4>
@@ -2335,7 +2335,7 @@ export default function App() {
                           {clinicSettings.maxSpecialCasesPerDay || 2} CASES / DAY
                         </span>
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                       <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                         {t.specialTreatmentsHeader}
                       </h2>
                       <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
