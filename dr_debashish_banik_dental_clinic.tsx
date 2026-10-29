@@ -520,7 +520,7 @@ export default function App() {
     phone: '',
     age: '',
     serviceId: 'general-consultation',
-    timeSlot: '10:00 AM',
+    timeSlot: '09:30 AM',
     symptoms: ''
   });
 
