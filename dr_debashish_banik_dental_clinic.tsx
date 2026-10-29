@@ -231,9 +231,9 @@ const DEFAULT_CHAMBER_SETTINGS = {
     'Beside Tropical Orthopaedics and Related Research Centre, near Mathchowmahani Bazar, A.A Road',
   mapQuery:
     'Tropical Orthopaedics and Related Research Centre, A.A Road, Mathchowmahani, Agartala, Tripura 799007',
-  morningHoursLabel: '10:00 AM – 12:00 PM',
+  morningHoursLabel: '09:30 AM – 12:00 PM',
   specialHoursLabel: '12:00 PM – 04:00 PM (Special Cases Only)',
-  eveningHoursLabel: '05:00 PM – 08:30 PM',
+  eveningHoursLabel: '04:30 PM – 08:00 PM',
   daysOpenLabel: 'Mon – Sat (Sunday: morning only)',
   slotDuration: 20, // 15, 20, or 30 mins for regular chamber
   maxSpecialCasesPerDay: 2, // Strict cap of 2 special cases per day
