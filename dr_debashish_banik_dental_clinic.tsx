@@ -2185,7 +2185,7 @@ export default function App() {
             {/* DOCTOR BIO & OUTSIDE X-RAY TRANSPARENCY BANNER */}
             <section
               id="about-doctor"
-              className="py-14 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
+              className="py-14 bg-dot-cream border-b border-[#E6E0D3]"
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
                 {/* Outside X-Ray Policy Notice */}
@@ -2232,7 +2232,7 @@ export default function App() {
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                       Structured Chamber Timings for Zero Crowd & Better Care
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                       To ensure every patient receives unhurried attention, our chamber separates quick daily checkups/extractions from time-intensive procedures:
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -2261,18 +2261,18 @@ export default function App() {
             {/* TREATMENTS SECTION: REGULAR VS SPECIAL CASES */}
             <section
               id="services"
-              className="py-16 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800"
+              className="py-16 bg-dot-cream border-b border-[#E6E0D3]"
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-14">
                 {/* PART A: REGULAR CHAMBER SERVICES */}
                 <div>
                   <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
                     <div>
-                      <span className="text-teal-700 dark:text-teal-400 font-extrabold text-xs sm:text-sm uppercase tracking-wider">
+                      <span className="text-teal-700 font-extrabold text-xs sm:text-sm uppercase tracking-wider">
                         Morning ({clinicSettings.morningHoursLabel}) & Evening (
                         {clinicSettings.eveningHoursLabel})
                       </span>
-                      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+                      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
                         {t.regularTreatmentsHeader}
                       </h2>
                     </div>
@@ -2325,7 +2325,7 @@ export default function App() {
                 </div>
 
                 {/* PART B: SPECIAL CASES (12:00 PM – 04:00 PM | MAX 2 PER DAY) */}
-                <div className="bg-gradient-to-br from-purple-950/5 via-purple-100/40 to-white dark:from-purple-950/30 dark:via-slate-900 dark:to-slate-900 rounded-3xl border-2 border-purple-300 dark:border-purple-800 p-6 sm:p-8 space-y-6">
+                <div className="bg-gradient-to-br from-purple-950/5 via-purple-100/40 to-white dark:from-purple-950 dark:via-slate-900 dark:to-slate-900 rounded-3xl border-2 border-purple-300 dark:border-purple-800 p-6 sm:p-8 space-y-6">
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-purple-200 dark:border-purple-800/80 pb-5">
                     <div className="space-y-1.5 max-w-3xl">
                       <div className="inline-flex items-center gap-2 bg-purple-700 text-white text-xs font-extrabold px-3 py-1 rounded-full">
@@ -2335,7 +2335,7 @@ export default function App() {
                           {clinicSettings.maxSpecialCasesPerDay || 2} CASES / DAY
                         </span>
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                         {t.specialTreatmentsHeader}
                       </h2>
                       <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -2390,7 +2390,7 @@ export default function App() {
             </section>
 
             {/* PATIENT SELF-SERVICE TOKEN LOOKUP & RESCHEDULE SECTION (NO SAMPLE CHIPS) */}
-            <section className="py-14 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+            <section className="py-14 bg-dot-cream border-b border-[#E6E0D3]">
               <div className="max-w-5xl mx-auto px-4 sm:px-6">
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-6 sm:p-10 text-white shadow-xl">
                   <div className="max-w-2xl">
